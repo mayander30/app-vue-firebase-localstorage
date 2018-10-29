@@ -2,6 +2,9 @@
 
 ##
 ```
+
+- VuexPersist - Persistir a store em localstorage
+
 AJUSTAR CONEXÃO COM O FIREBASE - DB/CONFIG
 let config = {
   apiKey: "",
