@@ -1,6 +1,7 @@
 # app
 
 ##
+```
 AJUSTAR CONEXÃO COM O FIREBASE - DB/CONFIG
 let config = {
   apiKey: "",
@@ -10,6 +11,7 @@ let config = {
   storageBucket: "",
   messagingSenderId: ""
 };
+```
 
 ## Project setup
 ```
