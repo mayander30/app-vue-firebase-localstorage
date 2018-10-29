@@ -1,5 +1,16 @@
 # app
 
+##
+AJUSTAR CONEXÃO COM O FIREBASE - DB/CONFIG
+let config = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
+};
+
 ## Project setup
 ```
 yarn install
