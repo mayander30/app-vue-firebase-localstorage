@@ -86,13 +86,14 @@ export default {
     return {
       key: 0,
       beer: {},
-      dialog: true};
+      dialog: true
+    };
   },
   created() {
-   // alert(this.$firebaseRefs.beers.child(this.$route.params.id).name);
-    this.beer = this.beersObj[this.$route.params.id];
+    this.setBeers();
+  },
+  beforeMount(){
 
-    this.dialog = false;
   },
   firebase: {
     beers: db.ref('beers'),
@@ -105,6 +106,9 @@ export default {
     }
   },
   watch: {
+    $route (to, from) {
+      this.setBeers();
+    },
     dialog (val) {
       if (!val) return
       setTimeout(() => (this.dialog = false), 4000)
@@ -113,6 +117,18 @@ export default {
   methods: {
     addToCart(beer) {
       store.commit("addToCart", beer);
+    },
+    setBeers(){
+      this.beer = {};
+      //this.dialog = false;
+      var _self = this;
+
+      db.ref('beers').orderByChild('id').equalTo(this.$route.params.id).on("child_added", function(snapshot) {
+        const myObjStr = JSON.stringify(snapshot.val());
+        var rl = JSON.parse(myObjStr);
+        _self.beer = rl;
+        _self.dialog = false;
+      });
     }
   }
 };

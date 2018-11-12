@@ -28,7 +28,7 @@
       </v-btn>
 
       <v-btn fab dark small color="primary"
-          :to="{name: 'BeerDetail', params: { id: beer['.key'] }}">
+          :to="{name: 'BeerDetail', params: { id: beer.id }}">
         <v-icon dark>info</v-icon>
       </v-btn>
 

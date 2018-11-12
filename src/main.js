@@ -5,6 +5,7 @@ import Vuetify from 'vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+
 import VueFire from 'vuefire'
 
 Vue.use(VueFire);

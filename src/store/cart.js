@@ -6,12 +6,12 @@ import VuexPersist from 'vuex-persist'
 import {
   findIndex
 } from 'lodash-es'
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const vuexPersist = new VuexPersist({
   key: 'appbeers',
   storage: localStorage
-})
+});
 
 export default new Vuex.Store({
   plugins: [vuexPersist.plugin],
@@ -22,7 +22,6 @@ export default new Vuex.Store({
   mutations: {
 
     addToCart(state, beer) {
-
       let index = findIndex(state.beers, (o) => o.id == beer.id)
 
       if (index === -1) {
@@ -62,4 +61,4 @@ export default new Vuex.Store({
   actions: {
 
   }
-})
+});

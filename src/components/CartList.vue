@@ -15,7 +15,7 @@
       </v-list-tile-avatar>
       <v-list-tile-content>
         <v-list-tile-title >
-          <router-link :to="{name: 'BeerDetail', params: { id: beer.key}}">{{ beer.name }}</router-link>
+          <router-link :to="{name: 'BeerDetail', params: { id: beer.id}}">{{ beer.name }}</router-link>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <a href="#" v-on:click="removeItemCart(beer)">
             <v-icon>remove_shopping_cart</v-icon>
